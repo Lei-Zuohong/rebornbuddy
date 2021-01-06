@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Zodiac Zeta Quests
+  Version: 0.7
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm
+-->
+
+<Profile>
+  <Name>Zodiac Zeta Quests</Name>
+  <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<Order>
+		<!-- Rise and Shine -->
+		<If Condition="not HasQuest(66096) and not IsQuestCompleted(66096)">
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9495">
+					<Log Message="Equipping Yoichi Bow" />
+					<RunCode Name="YoichiBow" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9497">
+					<Log Message="Equipping Lilith Rod" />
+					<RunCode Name="LilithRod" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9494">
+					<Log Message="Equipping Longinus" />
+					<RunCode Name="Longinus" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Monk))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9492">
+					<Log Message="Equipping Kaiser Knuckles" />
+					<RunCode Name="KaiserKnuckles" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9501">
+					<Log Message="Equipping Sasuke's Blades" />
+					<RunCode Name="SasukeBlades" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9491">
+					<Log Message="Equipping Excalibur" />
+					<RunCode Name="Excalibur" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 9500">
+					<Log Message="Equipping Aegis Shield" />
+					<RunCode Name="AegisShield" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>			
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9499">
+					<Log Message="Equipping Last Resort" />
+					<RunCode Name="LastResort" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9498">
+					<Log Message="Equipping Apocalypse" />
+					<RunCode Name="Apocalypse" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9493">
+					<Log Message="Equipping Ragnarok" />
+					<RunCode Name="Ragnarok" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+				<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9496">
+					<Log Message="Equipping Nirvana" />
+					<RunCode Name="Nirvana" />
+					<WaitTimer WaitTime="3" />
+				</While>
+			</If>						  		
+		  <LisbethTravel Area="North Shroud" Position="406.334, -4.498047, -88.8383"/>
+		  <If Condition="IsQuestAcceptQualified(66096)">
+			<PickupQuest QuestId="66096" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66096) == 1">
+		  <GetTo ZoneId="154" XYZ="440.4735, -0.9374537, -64.28922"/>
+		  <HandOver ItemId="2001561" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66096" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66096) == 2">
+		  <LisbethTravel Area="Mor Dhona" Position="25.59059, 29, -823.7938"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66096" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(66096) == 3">
+		  <LisbethTravel Area="North Shroud" Position="440.3532, -0.9374504, -63.92621"/>
+		  <TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66096" StepId="3"/>
+		</If>
+		<If Condition="GetQuestStep(66096) == 255">
+		  <GetTo ZoneId="138" XYZ="642.504, 9.31869, 512.4894"/>
+		  <TurnIn ItemId="2001561" QuestId="66096" NpcId="1011791" XYZ="641.657, 9.446683, 511.1925"/>
+		</If>
+		
+		<If condition="IsQuestCompleted(66096)">
+			<While condition="ZodiacCompletedMahatma() == 11 and ZodiacMahatmaIsDone()">
+				<LisbethTravel Area="North Shroud" Position="407.7509, -4.688663, -89.3384"/>
+				<RunCode name="PurchaseZodiacZenith"/>
+			</While>
+			<If condition="ZodiacCompletedMahatma() == 0">
+				<While Condition="not HasAtLeast(28,50)">
+					<RunCode name="NeedPoetics"/>
+				</While>
+				<If Condition="HasAtLeast(28,50)">	
+					<LisbethTravel Area="Western La Noscea" Position="642.0411, 9.382738, 511.8205"/>
+					<RunCode name="FirstMahatma"/>
+				</If>	
+			</If>
+			<!-- Buy Next Mahatma -->
+			<While condition="ZodiacMahatmaIsDone()">
+				<MoveTo XYZ="641.657,9.446683,511.1925" />
+				<RunCode name="AttachMahatma"/>
+			</While>
+			<!-- Mahatma Farm -->	
+			<If condition="not ZodiacMahatmaIsDone()">			
+				<LLoadProfile Path="../Dungeons/Tam Tara Deepcroft (Zodiac Zeta).xml"/>
+			</If>	
+		</If>
+		
+	</Order>
+	<CodeChunks>
+		<CodeChunk Name="FirstMahatma">
+            <![CDATA[ 
+				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1011791).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(2000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(3000);					
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);	
+				SelectString.ClickSlot(Slot);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);		
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(3000);
+                if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+				await Buddy.Coroutines.Coroutine.Sleep(3000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }
+				await Buddy.Coroutines.Coroutine.Sleep(4000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }				
+            ]]>	
+		</CodeChunk>	
+		<CodeChunk Name="AttachMahatma">
+            <![CDATA[ 
+				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1011791).Interact();
+                await Coroutine.Wait(5000, () => SelectIconString.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Coroutine.Wait(5000, () => Talk.DialogOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }
+                await Coroutine.Wait(5000, () => SelectString.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);		
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    SelectString.ClickLineContains(InventoryManager.EquippedItems.First().Name);
+                await Coroutine.Wait(5000, () => SelectString.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+					SelectString.ClickSlot(Slot + 1);
+				await Coroutine.Wait(5000, () => Talk.DialogOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                }
+				await Coroutine.Wait(5000, () => SelectYesno.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+				await Coroutine.Wait(5000, () => Talk.DialogOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                }
+				await Coroutine.Wait(5000, () => Talk.DialogOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                }				
+            ]]>
+		</CodeChunk>
+		<CodeChunk Name="NeedPoetics">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please farm more poetics.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="PurchaseZodiacZenith">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Talk to Jalzahn and purchase your final relic upgrade.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(60000);
+		  ]]>
+		</CodeChunk>
+ 		<CodeChunk Name="LastResort">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9499)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>		
+  		<CodeChunk Name="Apocalypse">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9498)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+  		<CodeChunk Name="LilithRod">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9497)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>	
+  		<CodeChunk Name="Ragnarok">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9493)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+  		<CodeChunk Name="Excalibur">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9491)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>		
+		</CodeChunk>
+  		<CodeChunk Name="AegisShield">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9500)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>		
+		</CodeChunk>	
+  		<CodeChunk Name="YoichiBow">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9495)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>	
+  		<CodeChunk Name="Longinus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9494)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>	
+  		<CodeChunk Name="KaiserKnuckles">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9492)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+  		<CodeChunk Name="SasukeBlades">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9501)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>		
+  		<CodeChunk Name="Nirvana">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9496)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>		
+	</CodeChunks>
+</Profile>	
