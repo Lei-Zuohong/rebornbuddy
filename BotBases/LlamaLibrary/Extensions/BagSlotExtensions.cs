@@ -261,7 +261,7 @@ namespace LlamaLibrary.Extensions
                 }
             }
 
-            if (result == 6)
+            if (result != 0)
             {
                 using (Core.Memory.TemporaryCacheState(false))
                 {
@@ -273,6 +273,11 @@ namespace LlamaLibrary.Extensions
                     });
                 }
             }
+        }
+        
+        public static bool CanTrade(this BagSlot slot)
+        {
+            return !slot.Item.Untradeable && !slot.IsCollectable && !(slot.SpiritBond > 0);
         }
     }
 }

@@ -38,6 +38,32 @@ namespace LlamaLibrary.ScriptConditions
         public static bool IsFateActive(int fateID)
         {
             return FateManager.ActiveFates.Any(i => i.Id == (uint)fateID);
-        }	
+        }
+
+        public static bool HasLearnedMount(int mountID)
+        {
+            return ActionManager.AvailableMounts.Any(i=> i.Id == ((uint)mountID));
+        }
+
+        public static int BeastTribeRank(int tribeID)
+        {
+            return BeastTribeHelper.GetBeastTribeRank(tribeID);
+        }
+
+        public static int DailyQuestAllowance()
+        {
+            return (int) BeastTribeHelper.DailyQuestAllowance();
+        }
+
+		public static bool LisbethPresent()
+        {
+            var loader = BotManager.Bots
+                .FirstOrDefault(c => c.Name == "Lisbeth");
+
+            if (loader == null) return false;
+			return true;
+
+        }
+		
     }
 }

@@ -30,14 +30,10 @@ def get_exbuddy():
 def get_llamalibrary():
     os.chdir('temp')
     os.system('git clone https://github.com/nt153133/LlamaLibrary.git')
-    hfile.rm_folder(path='LlamaLibrary',
-                    name='.git')
-    hfile.copy_folder(source_path='.',
-                      source_name='LlamaLibrary',
-                      path='../BotBases',
-                      name='LlamaLibrary')
-    hfile.rm_folder(path='.',
-                    name='LlamaLibrary')
+    hfile.rm_folder('LlamaLibrary/.git')
+    hfile.copy_folder('./LlamaLibrary',
+                      '../BotBases/LlamaLibrary')
+    hfile.rm_folder('./LlamaLibrary')
     os.chdir('..')
 
 # addition plugin for retainer in lisbeth

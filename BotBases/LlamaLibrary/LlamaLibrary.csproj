@@ -37,9 +37,8 @@
       <HintPath>Ext\GreyMagic.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="RebornBuddy, Version=1.0.335.0, Culture=neutral, PublicKeyToken=48d7174f8a943034">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Ext\RebornBuddy.exe</HintPath>
+    <Reference Include="RebornBuddy">
+      <HintPath>..\..\rebornbuddy.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,7 +56,13 @@
     <Compile Include="AutoFollow\AutoFollowSettingsFrm.Designer.cs">
       <DependentUpon>AutoFollowSettingsFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AutoTradeAccept.cs" />
+    <Compile Include="AutoTrade\AutoTrade.cs" />
+    <Compile Include="AutoTrade\AutoTradeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoTrade\AutoTradeSettings.Designer.cs">
+      <DependentUpon>AutoTradeSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Enums\ClassJobCategory.cs" />
     <Compile Include="Enums\GCNpc.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="Helpers\ActionHelper.cs" />
     <Compile Include="Helpers\BeastTribeHelper.cs" />
     <Compile Include="Helpers\BlueMageSpellBook.cs" />
+    <Compile Include="Helpers\CraftingHelper.cs" />
     <Compile Include="Helpers\FreeCompanyActions.cs" />
     <Compile Include="Helpers\GeneralFunctions.cs" />
     <Compile Include="Helpers\GrandCompanyHelper.cs" />
@@ -95,6 +101,7 @@
     <Compile Include="Helpers\Timers.cs" />
     <Compile Include="Helpers\TimersSettings.cs" />
     <Compile Include="Helpers\Translator.cs" />
+    <Compile Include="Helpers\GardenHelper.cs" />
     <Compile Include="HouseChecker.cs" />
     <Compile Include="HuntBase.cs" />
     <Compile Include="IshgardHandin.cs" />
@@ -115,6 +122,7 @@
     <Compile Include="Memory\Offsets.cs" />
     <Compile Include="OrderbotTags\AutoEquip.cs" />
     <Compile Include="OrderbotTags\AutoInventoryEquip.cs" />
+    <Compile Include="OrderbotTags\AutoLisbethEquip.cs" />
     <Compile Include="OrderbotTags\BasicTreasureFight.cs" />
     <Compile Include="OrderbotTags\BuyBluTotem.cs" />
     <Compile Include="OrderbotTags\BuyGCItem.cs" />
@@ -135,10 +143,12 @@
     <Compile Include="OrderbotTags\LLDiscardItem.cs" />
     <Compile Include="OrderbotTags\LLGoHome.cs" />
     <Compile Include="OrderbotTags\LLHandOver.cs" />
-    <Compile Include="OrderbotTags\LLQualityLower.cs" />
     <Compile Include="OrderbotTags\LLOpenChest.cs" />
+    <Compile Include="OrderbotTags\LLQualityLower.cs" />
     <Compile Include="OrderbotTags\LLSellItem.cs" />
     <Compile Include="OrderbotTags\LLSmallTalk.cs" />
+    <Compile Include="OrderbotTags\LLToast.cs" />
+    <Compile Include="OrderbotTags\LLTransport.cs" />
     <Compile Include="OrderbotTags\LLTurnIn.cs" />
     <Compile Include="OrderbotTags\LLoadProfile.cs" />
     <Compile Include="OrderbotTags\LLStopBot.cs" />
@@ -171,15 +181,18 @@
     <Compile Include="RemoteAgents\AgentGoldSaucerInfo.cs" />
     <Compile Include="RemoteAgents\AgentHandIn.cs" />
     <Compile Include="RemoteAgents\AgentHousingSelectBlock.cs" />
+    <Compile Include="RemoteAgents\AgentHWDScore.cs" />
     <Compile Include="RemoteAgents\AgentItemAppraisal.cs" />
     <Compile Include="RemoteAgents\AgentMasterPieceSupply.cs" />
     <Compile Include="RemoteAgents\AgentMeld.cs" />
+    <Compile Include="RemoteAgents\AgentMinionNoteBook.cs" />
     <Compile Include="RemoteAgents\AgentOutOnLimb.cs" />
     <Compile Include="RemoteAgents\AgentRecommendEquip.cs" />
     <Compile Include="RemoteAgents\AgentRetainerCharacter.cs" />
     <Compile Include="RemoteAgents\AgentRetainerInventory.cs" />
     <Compile Include="RemoteAgents\AgentRetainerList.cs" />
     <Compile Include="RemoteAgents\AgentRetainerVenture.cs" />
+    <Compile Include="RemoteAgents\AgentSatisfactionSupply.cs" />
     <Compile Include="RemoteAgents\IAgent.cs" />
     <Compile Include="RemoteWindows\Character.cs" />
     <Compile Include="RemoteWindows\CollectablesShop.cs" />
@@ -205,6 +218,7 @@
     <Compile Include="RemoteWindows\HugeCraftworksSupply.cs" />
     <Compile Include="RemoteWindows\HWDGathereInspect.cs" />
     <Compile Include="RemoteWindows\HWDLottery.cs" />
+    <Compile Include="RemoteWindows\HWDScore.cs" />
     <Compile Include="RemoteWindows\HWDSupply.cs" />
     <Compile Include="RemoteWindows\MasterPieceSupply.cs" />
     <Compile Include="RemoteWindows\MateriaAttach.cs" />
@@ -217,6 +231,8 @@
     <Compile Include="RemoteWindows\RetainerList.cs" />
     <Compile Include="RemoteWindows\SalvageAutoDialog.cs" />
     <Compile Include="RemoteWindows\RetainerTaskList.cs" />
+    <Compile Include="RemoteWindows\SatisfactionSupply.cs" />
+    <Compile Include="RemoteWindows\SatisfactionSupplyResult.cs" />
     <Compile Include="RemoteWindows\ShopExchangeItem.cs" />
     <Compile Include="RemoteWindows\SubmarinePartsMenu.cs" />
     <Compile Include="Repair.cs" />
@@ -239,6 +255,7 @@
     <Compile Include="ScriptConditions\Extras.cs" />
     <Compile Include="ScriptConditions\Helpers.cs" />
     <Compile Include="Structs\CraftingRelicTurnin.cs" />
+    <Compile Include="Structs\CraftingStatus.cs" />
     <Compile Include="Structs\FcActionShopItem.cs" />
     <Compile Include="Structs\FCWorkshopItem.cs" />
     <Compile Include="Structs\GatheringNodeData.cs" />
