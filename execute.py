@@ -14,20 +14,32 @@ if(('h' in args) or ('H' in args) or ('help' in args)):
     hprint.pstar()
     hprint.ppoint('-exbuddy', 'Get exbuddy update')
     hprint.ppoint('', 'A base plugin')
-    hprint.ppoint('-llamalibrary', 'Get llamalibrary update')
+    hprint.ppoint('-llama', 'Get llamalibrary update')
     hprint.ppoint('', 'A support for relicweapon')
+    hprint.ppoint('-relic', 'Get Relicweapon update')
+    hprint.ppoint('', 'A AFK relic weapon profile')
+    hprint.ppoint('-sodimm', 'Get sodimm update')
+    hprint.ppoint('', 'A lot of profiles')
+    hprint.ppoint('-y2krazy', 'Get y2krazy update')
+    hprint.ppoint('', 'A lot of profiles')
+    hprint.ppoint('-trust', 'Get truth update')
+    hprint.ppoint('', 'A AFK 70-80 leveling')
     hprint.pstar()
     exit()
 
 if(('a' in args) or ('exbuddy' in args)):
     default.get_exbuddy()
-if(('a' in args) or ('llamalibrary' in args)):
+if(('a' in args) or ('llama' in args)):
     default.get_llamalibrary()
     default.get_llamalibrary_retainer()
-# default.get_relicweapon()
-# default.get_sodimm()
-# default.get_y2krazy()
-# default.get_rbtrust()
+if(('a' in args) or ('relic' in args)):
+    default.get_relicweapon()
+if(('a' in args) or ('sodimm' in args)):
+    default.get_sodimm()
+if(('a' in args) or ('y2krazy' in args)):
+    default.get_y2krazy()
+if(('a' in args) or ('trust' in args)):
+    default.get_rbtrust()
 
 hfile.rm_folder('./temp')
 hfile.add_folder('.', 'temp')
