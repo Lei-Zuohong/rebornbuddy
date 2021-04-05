@@ -11,11 +11,9 @@ import headpy.hfile as hfile
 def get_exbuddy():
     os.chdir('temp')
     os.system('git clone https://github.com/Entrax643/ExBuddy.git')
-    hfile.copy_folder('ExBuddy/ExBuddy',
-                      '../Plugins/ExBuddy')
-    for file in os.listdir('ExBuddy/Assembly'):
-        hfile.copy_file('ExBuddy/Assembly/%s' % (file),
-                        '../%s' % (file))
+    hfile.copy_folder('ExBuddy/ExBuddy', '../Plugins/ExBuddy')
+    # for file in os.listdir('ExBuddy/Assembly'):
+    #     hfile.copy_file('ExBuddy/Assembly/%s' % (file), '../%s' % (file))
     hfile.rm_folder('./ExBuddy')
     os.chdir('..')
 
@@ -26,8 +24,7 @@ def get_llamalibrary():
     os.chdir('temp')
     os.system('git clone https://github.com/nt153133/LlamaLibrary.git')
     hfile.rm_folder('LlamaLibrary/.git')
-    hfile.copy_folder('./LlamaLibrary',
-                      '../BotBases/LlamaLibrary')
+    hfile.copy_folder('./LlamaLibrary', '../BotBases/LlamaLibrary')
     hfile.rm_folder('./LlamaLibrary')
     os.chdir('..')
 
@@ -38,8 +35,7 @@ def get_llamalibrary_retainer():
     os.chdir('temp')
     os.system('git clone https://github.com/nt153133/LisbethVentures.git')
     hfile.add_folder(path='../Plugins', name='LisbethVentures')
-    hfile.copy_file('LisbethVentures/LisbethVentures.cs',
-                    '../Plugins/LisbethVentures/LisbethVentures.cs')
+    hfile.copy_file('LisbethVentures/LisbethVentures.cs', '../Plugins/LisbethVentures/LisbethVentures.cs')
     hfile.rm_folder('./LisbethVentures')
     os.chdir('..')
 
